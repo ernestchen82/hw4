@@ -1,0 +1,17 @@
+int main //runs RPC loop
+void RPC_reverse //controls the car by the arguments sended in by RPC /reverse/run d1 d2 f(facing direction) 
+note: I modified the turn() function in bbcar.cpp to make it rotates the car instead of turnning it. 
+
+void BBCar::turn( double speed, double factor ){
+    if(factor>0){
+        servo0.set_factor(factor);
+        servo1.set_factor(1);
+    }
+    else if(factor<0){
+        servo0.set_factor(1);
+        servo1.set_factor(-factor);
+    }
+    servo0.set_speed(speed);
+    servo1.set_speed(speed);
+
+}
